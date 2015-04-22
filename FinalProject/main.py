@@ -15,46 +15,8 @@
 # limitations under the License.
 #
 import webapp2
-from google.appengine.ext.webapp import template
-from google.appengine.api import users
-from google.appengine.ext import ndb
-
-class Item(ndb.Model):
-	name = ndb.StringProperty(required=True)
-	#Can use queries on type property
-	type = ndb.StringProperty()
-	description = ndb.TextProperty()
-	#Can change to integer if needed, can use Amazon or Paypal to handle money
-	price = ndb.FloatProperty()
-	stock = ndb.IntegerProperty()
-	#Potential Others: Reviews
-	
-
-class MainHandler(webapp2.RequestHandler):
-    def get(self):
-        # self.response.write('Hello world!')
-		
-		user = users.get_current_user()
-		template_values = {}
-		if user:
-			url = users.create_logout_url('/')
-			url_linktest = 'Logout'
-			greeting = "Hello, "
-		else:
-			url = users.create_login_url(self.request.uri)
-			url_linktest = 'Login'
-			greeting = "Hello Guest!"
-			
-		template_values = {
-			'greeting': greeting,
-			'user': user,
-			'url': url,
-			'url_linktest': url_linktest
-		}
-		
-		self.response.out.write(template.render("index.html", template_values))
-			
+from handlers import SplashPage
 
 app = webapp2.WSGIApplication([
-    ('/', MainHandler)
+    ('/', SplashPage)
 ], debug=True)
