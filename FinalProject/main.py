@@ -15,8 +15,9 @@
 # limitations under the License.
 #
 import webapp2
-from handlers import SplashPage
+from handlers import SplashPage, IndexPage
 
 app = webapp2.WSGIApplication([
-    ('/', SplashPage)
+    ('/', SplashPage),
+    ('/main/', IndexPage)
 ], debug=True)
