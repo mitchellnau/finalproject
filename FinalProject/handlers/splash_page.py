@@ -1,11 +1,10 @@
 import webapp2
 from google.appengine.ext.webapp import template
 from google.appengine.api import users
+from handlers import BaseHandler
 
-class SplashHandler(webapp2.RequestHandler):
+class SplashPage(BaseHandler):
     def get(self):
-        #self.response.write('Hello world!')
-        
         user = users.get_current_user()
         template_values = {}
         if user:
@@ -17,16 +16,9 @@ class SplashHandler(webapp2.RequestHandler):
             url_linktext = 'Login'
             greeting = "Hello, you."
 
-        template_values = {
+        self.render("splash.html", {
           'greetings': greeting ,
           'user': user,
           'url': url,
           'url_linktext': url_linktext
-        }
-         
-        
-        self.response.out.write(template.render("splash.html", template_values))
-    
-app = webapp2.WSGIApplication([
-    ('/', SplashHandler)
-], debug=True)
+        })
