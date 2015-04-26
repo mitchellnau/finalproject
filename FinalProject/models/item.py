@@ -8,4 +8,4 @@ class Item(ndb.Model):
 	#Can change to integer if needed, can use Amazon or Paypal to handle money
 	price = ndb.FloatProperty()
 	stock = ndb.IntegerProperty()
-	#Potential Others: Reviews
+	#Potential Others: Reviews , image , rating ,also tags for the search
