@@ -5,32 +5,52 @@
     <title>Create a New Item</title>
 </head>
 <body>
-        <form class="form-horizontal" action='' method="POST">
+        <form class="form-horizontal" action="/created" method="POST">
                                 <fieldset>
                                     <div id="legend">
                                         <legend class="" style="border-bottom: 1px solid #9BD0F5;">Create a New Item</legend>
                                     </div>
+									
                                     <div class="control-group">
                                         <!-- Username -->
                                         <label class="control-label"  for="name">Item Name</label>
                                         <div class="controls">
-                                            <input type="text" id="username" name="type" placeholder="Item Type" class="input-xlarge">
+                                            <input type="text" id="username" name="item_name" placeholder="Item Type" class="input-xlarge">
                                         </div>
                                     </div>
+									
+								
+									
+									<div class="control-group">
+                                         <!--Username-->
+                                        <label class="control-label"  for="description">Type of Item</label>
+                                        <div class="controls">
+                                            <select>
+												<option value="volvo">Clothing</option>
+												<option value="saab">Electronics</option>
+												<option value="opel">Vehicles</option>
+												<option value="audi">Furniture</option>
+											</select>
+                                        </div>
+                                    </div>
+									
+									
+									
                                     <div class="control-group">
                                     <div class="control-group">
                                         <!-- Username -->
                                         <label class="control-label"  for="description">Description</label>
                                         <div class="controls">
-                                            <input type="text" id="description" name="type" placeholder="Item description" class="input-xlarge">
+                                            <input type="text" id="description" name="item_description" placeholder="Item description" class="input-xlarge">
                                         </div>
                                     </div>
-
+									
+									
                                     <div class="control-group">
                                         <!-- Username -->
                                         <label class="control-label"  for="price">Price</label>
                                         <div class="controls">
-                                            <input type="number" id="price" name="type" placeholder="Item price" class="input-xlarge">
+                                            <input type="number" id="price" name="item_price" placeholder="Item price" class="input-xlarge">
                                         </div>
                                     </div>
 
@@ -38,7 +58,7 @@
                                         <!-- Username -->
                                         <label class="control-label"  for="stock">Stock</label>
                                         <div class="controls">
-                                            <input type="number" id="stock" name="type" placeholder="Item stock" class="input-xlarge">
+                                            <input type="number" id="stock" name="item_stock" placeholder="Item stock" class="input-xlarge">
                                         </div>
                                     </div>
 
