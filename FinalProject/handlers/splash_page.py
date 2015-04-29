@@ -5,6 +5,17 @@ from handlers import BaseHandler
 
 class SplashPage(BaseHandler):
     def get(self):
+        # Checks for active Google account session
+        user = users.get_current_user()
+
+        if user:
+            self.redirect('/')
+        else:
+            self.redirect(users.create_login_url(self.request.uri))
+
+
+    """
+    def get(self):
         user = users.get_current_user()
         template_values = {}
         if user:
@@ -12,9 +23,10 @@ class SplashPage(BaseHandler):
             url_linktext = 'Logout'
             greeting = "Goodbye, "
         else:
-            url = users.create_login_url('/main')
             url_linktext = 'Login'
             greeting = "Hello, you."
+            url = '/'
+            self.redirect(users.create_login_url(self.request.uri))
 
         self.render("splash.html", {
           'greetings': greeting ,
@@ -22,3 +34,4 @@ class SplashPage(BaseHandler):
           'url': url,
           'url_linktext': url_linktext
         })
+"""
