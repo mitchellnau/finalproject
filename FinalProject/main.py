@@ -15,10 +15,11 @@
 # limitations under the License.
 #
 import webapp2
-from handlers import IndexPage, NewItem, SplashPage
+from handlers import IndexPage, NewItem, SplashPage, ItemInput
 
 app = webapp2.WSGIApplication([
     ('/newitem', NewItem),
     ('/', IndexPage),
-	('/splash', SplashPage)
+	('/splash', SplashPage),
+	('/created', ItemInput)
 ], debug=True)
