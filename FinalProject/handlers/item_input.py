@@ -1,4 +1,5 @@
 import webapp2
+from google.appengine.api import users
 from models import Item
 from handlers import BaseHandler
 
@@ -19,6 +20,7 @@ class ItemInput(webapp2.RequestHandler):
 		item.description=itemdescription
 		item.price=itemprice
 		item.stock=itemstock
+		item.owner=users.get_current_user().email()
 		
 		item.put()
 		self.response.out.write("Details entered into the datastore")
