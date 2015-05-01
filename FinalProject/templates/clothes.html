@@ -28,11 +28,18 @@
     </div>
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">All</a></li>
-        <li><a href="#">Clothing</a></li>
-        <li><a href="#">Vehicles</a></li>
-        <li><a href="#">Furniture</a></li>
-        <li><a href="#">Electronics</a></li>
+        <li><a href="store">All</a></li>
+        <li><a href="clothes">Clothing</a></li>
+        <li><a href="vehicle">Vehicles</a></li>
+        <li><a href="furniture">Furniture</a></li>
+        <li><a href="electronics">Electronics</a></li>
+	</ul>
+      {% if user %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>Welcome, {{user.email()}}</a></li>
+      </ul>
+	  {% endif %}
+
 
       </ul>
     </div>
