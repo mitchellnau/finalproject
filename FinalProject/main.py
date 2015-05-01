@@ -15,7 +15,8 @@
 # limitations under the License.
 #
 import webapp2
-from handlers import IndexPage, NewItem, LoginPage, ItemInput, LogoutPage, About
+from handlers import IndexPage, NewItem, LoginPage, ItemInput, LogoutPage
+from handlers import About, LoggedInPage, LoggedOutPage
 
 app = webapp2.WSGIApplication([
     ('/newitem', NewItem),
@@ -23,5 +24,7 @@ app = webapp2.WSGIApplication([
     ('/login', LoginPage),
     ('/logout', LogoutPage),
     ('/created', ItemInput),
-	('/about', About)
+    ('/about', About),
+    ('/loggedin', LoggedInPage),
+    ('/loggedout', LoggedOutPage)
 ], debug=True)
