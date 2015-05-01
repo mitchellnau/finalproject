@@ -13,8 +13,19 @@ handlers:
 - url: /static
   static_dir: static
 
+- url: /newitem
+  script: main.app
+  login: required
+  auth_fail_action: unauthorized
+  
+- url: /success
+  script: main.app
+  login: required
+  auth_fail_action: unauthorized
+  
 - url: .*
   script: main.app
+  
 
 libraries:
 - name: webapp2
