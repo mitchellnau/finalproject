@@ -23,4 +23,5 @@ class ItemInput(webapp2.RequestHandler):
 		item.owner=users.get_current_user().email()
 		
 		item.put()
-		self.response.out.write("Details entered into the datastore")
+		self.redirect('success')
+		
