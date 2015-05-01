@@ -16,7 +16,7 @@
 #
 import webapp2
 from handlers import IndexPage, NewItem, LoginPage, ItemInput, LogoutPage
-from handlers import About, LoggedInPage, LoggedOutPage
+from handlers import About, LoggedInPage, LoggedOutPage, Success
 
 app = webapp2.WSGIApplication([
     ('/newitem', NewItem),
@@ -26,5 +26,6 @@ app = webapp2.WSGIApplication([
     ('/created', ItemInput),
     ('/about', About),
     ('/loggedin', LoggedInPage),
-    ('/loggedout', LoggedOutPage)
+    ('/loggedout', LoggedOutPage),
+	('/success', Success)
 ], debug=True)
