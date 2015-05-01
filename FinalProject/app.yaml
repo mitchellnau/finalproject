@@ -23,6 +23,11 @@ handlers:
   login: required
   auth_fail_action: unauthorized
   
+- url: /userprofile
+  script: main.app
+  login: required
+  auth_fail_action: unauthorized
+  
 - url: .*
   script: main.app
   
