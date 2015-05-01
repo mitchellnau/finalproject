@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 {% block content %}
-        <form class="form-horizontal" action="/created" method="POST" align='center'>
+ <div class="header vert" align="center">
+        <form class="form-horizontal" action="/created" method="POST">
                                 <fieldset>
                                     <div id="legend">
-                                        <legend class="" style="border-bottom: 1px solid #9BD0F5;">Create a New Item</legend>
+                                        <h1 class="page-header">Create a New Item </h1>
                                     </div>
 									
                                     <div class="control-group">
@@ -58,6 +59,8 @@
                                             <button class="btn btn-success">Create</button>
                                         </div>
                                     </div>
+                                        </div>
                                 </fieldset>
-                            </form>
+        </form>
+</div>
 {% endblock %}
