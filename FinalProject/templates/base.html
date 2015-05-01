@@ -32,10 +32,12 @@
         <li><a href="/logout">Logout</a></li>
         <li><a href="/newitem">Add to Store</a></li>
         <li><a href="/store">Purchase from Store</a></li>
+        {% block nav %}
+        {% endblock %}
         {% else %}
         <li><a href="/login">Login</a></li>
         {% endif %}
-        <li><a href="/about">Our Story</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="#footer">Social Media</a></li>
       </ul>
       {% if user %}
