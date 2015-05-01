@@ -75,7 +75,6 @@ img.grayscale {
 .vert {
   vertical-align: middle;
   width:100%;
-  padding-top:4%;
 }
 
 .header h1 {
@@ -94,7 +93,7 @@ img.grayscale {
 }
 
 .header {
-  height: 80%;
+  height: 100%;
   background: #11cc45 url('http://www.bootply.com/assets/example/pt_squares_lg.png') repeat center center fixed;
 }
 
