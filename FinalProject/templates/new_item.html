@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Create a New Item</title>
-</head>
-<body>
-        <form class="form-horizontal" action="/created" method="POST">
+{% extends "base.html" %}
+{% block content %}
+        <form class="form-horizontal" action="/created" method="POST" align='center'>
                                 <fieldset>
                                     <div id="legend">
                                         <legend class="" style="border-bottom: 1px solid #9BD0F5;">Create a New Item</legend>
@@ -65,5 +60,4 @@
                                     </div>
                                 </fieldset>
                             </form>
-</body>
-</html>
+{% endblock %}
