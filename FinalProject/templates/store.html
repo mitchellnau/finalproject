@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+     <div class="header vert">
+	<div class="container">
+      <h1>Store</h1>
+		<div>
+			<table class="table table-bordered table-condensed">
+				{% for item in items %}
+				<tr>
+					<td>{{ item.name }}
+					<div style="font-size: 13px; font-style: italic;">Posted by: {{item.owner}}</div></td>
+					<td><span style="font-size:13px;">{{ item.date }}</span></td>
+				</tr>
+				{% endfor %}
+				</div>
+				</table>
+		</div>
+		
+      <div>&nbsp;</div>
+  </div>
+</div> 
+{% endblock %}
+
+
+
