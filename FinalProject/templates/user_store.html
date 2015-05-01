@@ -28,21 +28,18 @@
     </div>
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="nav navbar-nav">
-        {% if user %}
-        <li><a href="/logout">Logout</a></li>
-        <li><a href="/newitem">Add to Store</a></li>
-        <li><a href="/store">Purchase from Store</a></li>
-        {% else %}
-        <li><a href="/login">Login</a></li>
-        {% endif %}
-        <li><a href="/about">Our Story</a></li>
-        <li><a href="#footer">Social Media</a></li>
-      </ul>
+        <li><a href="store">All</a></li>
+        <li><a href="clothes">Clothing</a></li>
+        <li><a href="vehicle">Vehicles</a></li>
+        <li><a href="furniture">Furniture</a></li>
+        <li><a href="electronics">Electronics</a></li>
+	</ul>
       {% if user %}
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="userprofile">Welcome, {{user.email()}}</a></li>
+        <li><a>Welcome, {{user.email()}}</a></li>
       </ul>
-      {% endif %}
+	  {% endif %}
+
     </div>
    </div>
 </div>
@@ -51,37 +48,37 @@
 <br>
 <div class="header vert">
   <div class="container">
-  {% block content %}
-  {% endblock %}
+	<div class="header vert">
+	<div class="container">
+      <h1>User's Items</h1>
+		<div>
+			<table class="table">
+				{% for item in items %}
+				<tr class="success"> <!-- Row 1 -->
+					<td align="center"><div style="font-size: 26px; font-style: bold;">{{ item.name }}</div><!-- Column 1 -->
+					<div style="font-size: 13px; font-style: bold;">Posted by: {{item.owner}}</div></td>
+				</tr>
+				<tr class="danger">
+					<td align="center">Amount in Stock: {{item.stock}}
+					<div style="font-size: 13px; font-style: bold;">Price: ${{item.price}}.00</div></td><!-- Column 1 -->
+				</tr>
+				<tr class="info"> <!-- Row 2 -->
+					<td align="center">{{item.description}}</td><!-- Column 1 -->
+				</tr>
+
+				{% endfor %}
+				</div>
+				</table>
+				
+		</div>
+		
+      <div>&nbsp;</div>
   </div>
+</div> 
+</div>
 </div>
 
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3 text-center">
-        <ul class="list-inline">
-          <li><a id="footer"></a><i class="icon-facebook icon-2x"></i></li>
-          <li><i class="icon-twitter icon-2x"></i></li>
-          <li><i class="icon-google-plus icon-2x"></i></li>
-          <li><i class="icon-pinterest icon-2x"></i></li>
-          <li><a href="https://github.com/mitchellnau/finalproject"><span class="icon-github icon-2x"></span></a></li>
-
-        </ul>
-        <hr>
-        <p>Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">eZay</a>.<br>Company 2015</p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<ul class="nav pull-right scroll-down">
-  <li><a href="#" title="Scroll down"><i class="icon-chevron-down icon-3x"></i></a></li>
-</ul>
-<ul class="nav pull-right scroll-top">
-  <li><a href="#" title="Scroll to top"><i class="icon-chevron-up icon-3x"></i></a></li>
-</ul>
 
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
