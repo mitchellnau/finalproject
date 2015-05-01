@@ -9,3 +9,4 @@ from success import Success
 from loggedin_page import LoggedInPage
 from loggedout_page import LoggedOutPage
 from store_handler import StoreHandler
+from store_clothes import StoreClothes
