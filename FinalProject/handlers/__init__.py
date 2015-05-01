@@ -5,5 +5,6 @@ from index_page import IndexPage
 from new_item import NewItem
 from item_input import ItemInput
 from about import About
+from success import Success
 from loggedin_page import LoggedInPage
 from loggedout_page import LoggedOutPage
