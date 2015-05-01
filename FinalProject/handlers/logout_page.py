@@ -9,7 +9,7 @@ class LogoutPage(BaseHandler):
         user = users.get_current_user()
 
         if user:
-            self.redirect(users.create_logout_url('/'))
+            self.redirect(users.create_logout_url('/loggedout'))
         else:
             self.redirect('/login')
 

@@ -9,7 +9,7 @@ class LoginPage(BaseHandler):
         user = users.get_current_user()
 
         if user:
-            self.redirect('/')
+            self.redirect('/loggedin')
         else:
             self.redirect(users.create_login_url(self.request.uri))
 
