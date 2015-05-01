@@ -9,6 +9,7 @@ class StoreUser(BaseHandler):
 		items = Item.query().filter(Item.owner == user.email()).order(-Item.date).fetch(10)
 
 		template_values = {
-			'items':items
+			'items':items,
+                        'user':user
 		}
 		self.render("user_store.html", (template_values))

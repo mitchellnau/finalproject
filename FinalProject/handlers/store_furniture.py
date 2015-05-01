@@ -9,6 +9,7 @@ class StoreFurniture(BaseHandler):
 		items = Item.query().filter(Item.type == 'Furniture').order(-Item.date).fetch(10)
 
 		template_values = {
-			'items':items
+			'items':items,
+                        'user':user
 		}
 		self.render("store.html", (template_values))
