@@ -28,13 +28,21 @@
     </div>
     <div class="navbar-collapse collapse" id="navbar">
       <ul class="nav navbar-nav">
-        <li><a href="/login">Login</a></li>
+        {% if user %}
         <li><a href="/logout">Logout</a></li>
-        <li><a href="/about">Our Story</a></li>
         <li><a href="/newitem">Add to Store</a></li>
+        <li><a href="/store">Purchase from Store</a></li>
+        {% else %}
+        <li><a href="/login">Login</a></li>
+        {% endif %}
+        <li><a href="/about">Our Story</a></li>
         <li><a href="#sec4">Social Media</a></li>
-
       </ul>
+      {% if user %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a>Welcome, {{user.email()}}</a></li>
+      </ul>
+      {% endif %}
     </div>
    </div>
 </div>
