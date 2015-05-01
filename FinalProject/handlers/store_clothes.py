@@ -10,4 +10,4 @@ class StoreClothes(BaseHandler):
 		template_values = {
 			'items':items
 		}
-		self.render("clothes.html", (template_values))
+		self.render("store.html", (template_values))
