@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block nav %}
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Categories<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+            <li><a href="clothes">Clothing</a></li>
+            <li><a href="vehicle">Vehicles</a></li>
+            <li><a href="furniture">Furniture</a></li>
+            <li><a href="electronics">Electronics</a></li>
+          </ul>
+        </li>
+{% endblock %}
+{% block content %}
+       <div class="header vert" align="center">
+        <div id="legend">
+                                        <h1 class="page-header">Store</h1>
+        </div>
+		<div>
+			<table class="table">
+				{% for item in items %}
+				<tr class="success"> <!-- Row 1 -->
+					<td align="center"><div style="font-size: 26px; font-style: bold;">{{ item.name }}</div><!-- Column 1 -->
+					<div style="font-size: 13px; font-style: bold;">Posted by: {{item.owner}}</div></td>
+				</tr>
+				<tr class="danger">
+					<td align="center">Amount in Stock: {{item.stock}}
+					<div style="font-size: 13px; font-style: bold;">Price: ${{item.price}}.00</div></td><!-- Column 1 -->
+				</tr>
+				<tr class="info"> <!-- Row 2 -->
+					<td align="center">{{item.description}}</td><!-- Column 1 -->
+				</tr>
+				
+				<tr> <!-- Row 3 -->
+					<td align="center"><script data-env="sandbox" data-tax="1.00" data-shipping="1000.00" data-currency="USD" data-amount="{{item.price}}.00" data-quantity="1" data-name="{{ item.name }}" 
+					data-button="buynow" 
+					src="https://www.paypalobjects.com/js/external/paypal-button.min.js?merchant=kms682@nau.edu"
+					async="async" ></script></td><!-- Column 1 -->
+				</tr>
+				{% endfor %}
+				</div>
+				</table>
+				
+		</div>
+{% endblock %}
