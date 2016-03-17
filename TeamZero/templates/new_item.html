@@ -4,11 +4,11 @@
         <form class="form-horizontal" action="/created" method="POST">
                                 <fieldset>
                                     <div id="legend">
-                                        <h1 class="page-header">Create a New Item </h1>
+                                        <h1 class="page-header">Create a New Task </h1>
                                     </div>
 									
                                     <div class="control-group">
-                                        <label class="control-label"  for="name">Item Name</label>
+                                        <label class="control-label"  for="name">Task Name</label>
                                         <div class="controls">
                                             <input type="text" id="username" name="item_name" placeholder="Item Name" class="input-xlarge">
                                         </div>
@@ -17,13 +17,13 @@
 								
 									<!-- May not be needed, value that isn't stored in datastore atm. -->
 									<div class="control-group">
-                                        <label class="control-label"  for="type">Type of Item</label>
+                                        <label class="control-label"  for="type">Type of Task</label>
                                         <div class="controls">
                                             <select name="item_type">
-												<option value="Clothing">Clothing</option>
-												<option value="Electronics">Electronics</option>
-												<option value="Vehicles">Vehicles</option>
-												<option value="Furniture">Furniture</option>
+												<option value="Project">Project</option>
+												<option value="Task">Task</option>
+												<option value="Knowledge">Knowledge</option>
+												
 											</select>
                                         </div>
                                     </div>
@@ -39,27 +39,15 @@
                                     </div>
 									
 									
-                                    <div class="control-group">
-                                        <label class="control-label"  for="price">Price</label>
-                                        <div class="controls">
-                                            <input type="number" id="price" name="item_price" placeholder="Item price" class="input-xlarge">
-                                        </div>
-                                    </div>
-
-                                    <div class="control-group">
-                                        <label class="control-label"  for="stock">Stock</label>
-                                        <div class="controls">
-                                            <input type="number" id="stock" name="item_stock" placeholder="Item stock" class="input-xlarge">
-                                        </div>
-                                    </div>
                                     <br>
                                     <div class="control-group">
                                         <!-- Button -->
                                         <div class="controls">
-                                            <button class="btn btn-success">Create A shoping item</button>
-                                        </div>
+                                            <button class="btn btn-success">Create A Task!</button>
+                                        </div>	
                                     </div>
-                                        </div>
+                                        
+									</div>
                                     <br>
                                     <br>
                                     <br>

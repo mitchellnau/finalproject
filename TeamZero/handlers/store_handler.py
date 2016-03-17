@@ -12,7 +12,7 @@ class StoreHandler(BaseHandler):
 		
 		template_values = {
 			'items':items,
-                        'user': user
+            'user': user
 		}
 		self.render("store.html", (template_values))
 		
